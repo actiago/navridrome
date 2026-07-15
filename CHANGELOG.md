@@ -1,20 +1,20 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+O formato é baseado no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
+e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [Não lançado]
 
-### Added
+### Adicionado
 
-- Initial repository setup
-- Docker and Podman deployment support
-- Docker Compose and Podman Compose configurations
-- Deployment scripts for Docker and Podman
-- GitHub Actions CI workflow
-- EditorConfig configuration
-- Comprehensive documentation
+- Configuração inicial do repositório
+- Suporte de implantação para Docker e Podman
+- Configurações do Docker Compose e Podman Compose
+- Scripts de implantação para Docker e Podman
+- Workflow de CI do GitHub Actions
+- Configuração do EditorConfig
+- Documentação abrangente
 
-[Unreleased]: https://github.com/actiago/navridrome/compare/v0.0.0...HEAD
+[Não lançado]: https://github.com/actiago/navridrome/compare/v0.0.0...HEAD
