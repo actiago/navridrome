@@ -26,7 +26,7 @@ jobs:
           awk '/^## /{if (found) exit; if ($0 ~ /'"${{ github.ref_name }}"'/) found=1; next} found{print}' CHANGELOG.md >> release_notes.md || true
 
       - name: Create Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           body_path: release_notes.md
           generate_release_notes: true
