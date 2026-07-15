@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  navidrome:
+    image: docker.io/deluan/navidrome:latest
+    container_name: navidrome
+    restart: unless-stopped
+    ports:
+      - "4533:4533"
+    environment:
+      # Scan schedule
+      - ND_SCANSCHEDULE=1h
+      # Log level
+      - ND_LOGLEVEL=info
+      # Last.fm integration (optional)
+      - ND_LASTFM_ENABLED=true
+      - ND_LASTFM_APIKEY=${ND_LASTFM_APIKEY:-}
+      - ND_LASTFM_SECRET=${ND_LASTFM_SECRET:-}
+      # Music folder
+      - ND_MUSICFOLDER=/music
+      # Data folder
+      - ND_DATAFOLDER=/data
+    volumes:
+      - ./navidrome-data:/data:Z
+      - /path/to/your/music:/music:ro,Z
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4533/ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    # Podman specific: run as non-root user (optional)
+    # user: "1000:1000"

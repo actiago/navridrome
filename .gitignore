@@ -1,0 +1,27 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Navidrome data
+/data/
+/music/
+
+# Docker volumes
+navidrome-data/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
