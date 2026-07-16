@@ -1,51 +1,51 @@
-# 🎵 Navidrome
+# Navidrome
 
 <div align="center">
 
 [![CI](https://github.com/actiago/navridrome/actions/workflows/ci.yml/badge.svg)](https://github.com/actiago/navridrome/actions/workflows/ci.yml)
-[![Licença: MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-yellow.svg)](LICENSE)
+[![Licenca: MIT](https://img.shields.io/badge/Licenca-MIT-yellow.svg)](LICENSE)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/r/deluan/navidrome)
 [![Podman](https://img.shields.io/badge/Podman-892CA0?logo=podman&logoColor=white)](https://podman.io)
 
-**Navidrome** é um servidor de música moderno e streamer compatível com a API Subsonic.
-Este repositório fornece configurações de implantação para executar o Navidrome com **Docker** e **Podman**.
+**Navidrome** e um servidor de musica moderno e streamer compativel com a API Subsonic.
+Este repositorio fornece configuracoes de implantacao para executar o Navidrome com **Docker** e **Podman**.
 
 </div>
 
 ---
 
-## 📋 Índice
+## Indice
 
-- [Pré-requisitos](#pré-requisitos)
-- [Início Rápido](#início-rápido)
+- [Pre-requisitos](#pre-requisitos)
+- [Inicio Rapido](#inicio-rapido)
   - [Usando Docker](#usando-docker)
   - [Usando Podman](#usando-podman)
 - [Docker Compose](#docker-compose)
 - [Podman Compose](#podman-compose)
-- [Configuração](#configuração)
-- [Scripts de Implantação](#scripts-de-implantação)
+- [Configuracao](#configuracao)
+- [Scripts de Implantacao](#scripts-de-implantacao)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Contribuindo](#contribuindo)
-- [Licença](#licença)
+- [Licenca](#licenca)
 
 ---
 
-## ✅ Pré-requisitos
+## Pre-requisitos
 
-Antes de começar, certifique-se de ter um dos seguintes instalados:
+Antes de comecar, certifique-se de ter um dos seguintes instalados:
 
 - **Docker** (20.10+) e Docker Compose — [Instalar Docker](https://docs.docker.com/engine/install/)
 - **Podman** (3.0+) e Podman Compose — [Instalar Podman](https://podman.io/docs/installation)
 
-> 💡 **Nota:** Podman é um mecanismo de contêiner sem daemon que substitui diretamente o Docker. É particularmente adequado para execução de contêineres sem root.
+> **Nota:** Podman e um mecanismo de contêiner sem daemon que substitui diretamente o Docker. E particularmente adequado para execucao de contêineres sem root.
 
 ---
 
-## 🚀 Início Rápido
+## Inicio Rapido
 
 ### Usando Docker
 
-Execute o Navidrome com um único comando:
+Execute o Navidrome com um unico comando:
 
 ```bash
 docker run -d \
@@ -63,7 +63,7 @@ Em seguida, acesse o Navidrome em **http://localhost:4533**.
 
 ### Usando Podman
 
-Execute o Navidrome com um único comando:
+Execute o Navidrome com um unico comando:
 
 ```bash
 podman run -d \
@@ -77,15 +77,15 @@ podman run -d \
   docker.io/deluan/navidrome:latest
 ```
 
-> 🔒 A flag `:Z` nos volumes é específica para sistemas Podman/SELinux e define automaticamente o contexto SELinux correto.
+> A flag `:Z` nos volumes e especifica para sistemas Podman/SELinux e define automaticamente o contexto SELinux correto.
 
 ---
 
-## 🐳 Docker Compose
+## Docker Compose
 
-Para uma configuração mais estruturada, use o Docker Compose:
+Para uma configuracao mais estruturada, use o Docker Compose:
 
-1. **Clone este repositório:**
+1. **Clone este repositorio:**
 
    ```bash
    git clone https://github.com/actiago/navridrome.git
@@ -99,12 +99,12 @@ Para uma configuração mais estruturada, use o Docker Compose:
    # Edite .env com suas credenciais da API do Last.fm, se desejar
    ```
 
-3. **Edite `docker-compose.yml`** e atualize o caminho do volume de música:
+3. **Edite `docker-compose.yml`** e atualize o caminho do volume de musica:
 
    ```yaml
    volumes:
      - ./navidrome-data:/data
-     - /caminho/para/sua/musica:/music:ro   # ← Altere este caminho
+     - /caminho/para/sua/musica:/music:ro   # Altere este caminho
    ```
 
 4. **Inicie o Navidrome:**
@@ -127,11 +127,11 @@ Para uma configuração mais estruturada, use o Docker Compose:
 
 ---
 
-## 🦭 Podman Compose
+## Podman Compose
 
-Para usuários do Podman, use o arquivo `podman-compose.yml` fornecido:
+Para usuarios do Podman, use o arquivo `podman-compose.yml` fornecido:
 
-1. **Clone este repositório:**
+1. **Clone este repositorio:**
 
    ```bash
    git clone https://github.com/actiago/navridrome.git
@@ -145,12 +145,12 @@ Para usuários do Podman, use o arquivo `podman-compose.yml` fornecido:
    # Edite .env com suas credenciais da API do Last.fm, se desejar
    ```
 
-3. **Edite `podman-compose.yml`** e atualize o caminho do volume de música:
+3. **Edite `podman-compose.yml`** e atualize o caminho do volume de musica:
 
    ```yaml
    volumes:
      - ./navidrome-data:/data:Z
-     - /caminho/para/sua/musica:/music:ro,Z   # ← Altere este caminho
+     - /caminho/para/sua/musica:/music:ro,Z   # Altere este caminho
    ```
 
 4. **Inicie o Navidrome:**
@@ -179,23 +179,23 @@ Para usuários do Podman, use o arquivo `podman-compose.yml` fornecido:
 
 ---
 
-## ⚙️ Configuração
+## Configuracao
 
-### Variáveis de Ambiente
+### Variaveis de Ambiente
 
-O Navidrome pode ser configurado usando variáveis de ambiente. Todas as variáveis são prefixadas com `ND_`.
+O Navidrome pode ser configurado usando variaveis de ambiente. Todas as variaveis sao prefixadas com `ND_`.
 
-| Variável | Padrão | Descrição |
+| Variavel | Padrao | Descricao |
 |---|---|---|
-| `ND_SCANSCHEDULE` | `1h` | Com que frequência escanear novas músicas (ex.: `30m`, `1h`, `6h`) |
-| `ND_LOGLEVEL` | `info` | Nível de log: `debug`, `info`, `warning`, `error` |
+| `ND_SCANSCHEDULE` | `1h` | Com que frequencia escanear novas musicas (ex.: `30m`, `1h`, `6h`) |
+| `ND_LOGLEVEL` | `info` | Nivel de log: `debug`, `info`, `warning`, `error` |
 | `ND_LASTFM_ENABLED` | `false` | Habilitar scrobbling do Last.fm |
 | `ND_LASTFM_APIKEY` | — | Sua chave da API do Last.fm |
 | `ND_LASTFM_SECRET` | — | Seu segredo compartilhado do Last.fm |
-| `ND_MUSICFOLDER` | `/music` | Caminho para o diretório de música dentro do contêiner |
-| `ND_DATAFOLDER` | `/data` | Caminho para o diretório de dados dentro do contêiner |
+| `ND_MUSICFOLDER` | `/music` | Caminho para o diretorio de musica dentro do contêiner |
+| `ND_DATAFOLDER` | `/data` | Caminho para o diretorio de dados dentro do contêiner |
 
-Para uma lista completa de opções de configuração, veja a [documentação oficial do Navidrome](https://www.navidrome.org/docs/usage/configuration-options/).
+Para uma lista completa de opcoes de configuracao, veja a [documentacao oficial do Navidrome](https://www.navidrome.org/docs/usage/configuration-options/).
 
 ### Usando Arquivo `.env`
 
@@ -205,24 +205,24 @@ Copie o arquivo de ambiente de exemplo e personalize-o:
 cp .env.example .env
 ```
 
-Em seguida, edite `.env` com suas configurações preferidas. Os arquivos do Docker Compose carregarão automaticamente as variáveis deste arquivo.
+Em seguida, edite `.env` com suas configuracoes preferidas. Os arquivos do Docker Compose carregarao automaticamente as variaveis deste arquivo.
 
 ---
 
-## 📜 Scripts de Implantação
+## Scripts de Implantacao
 
-Este repositório inclui scripts auxiliares para implantação rápida:
+Este repositorio inclui scripts auxiliares para implantacao rapida:
 
 ### Script Docker
 
 ```bash
-# Torne o script executável
+# Torne o script executavel
 chmod +x scripts/docker-run.sh
 
-# Execute com o diretório de música obrigatório
+# Execute com o diretorio de musica obrigatorio
 ./scripts/docker-run.sh --music /caminho/para/sua/musica
 
-# Com opções personalizadas
+# Com opcoes personalizadas
 ./scripts/docker-run.sh \
   --music /media/music \
   --data /opt/navidrome-data \
@@ -234,13 +234,13 @@ chmod +x scripts/docker-run.sh
 ### Script Podman
 
 ```bash
-# Torne o script executável
+# Torne o script executavel
 chmod +x scripts/podman-run.sh
 
-# Execute com o diretório de música obrigatório
+# Execute com o diretorio de musica obrigatorio
 ./scripts/podman-run.sh --music /caminho/para/sua/musica
 
-# Com opções personalizadas
+# Com opcoes personalizadas
 ./scripts/podman-run.sh \
   --music /media/music \
   --data /opt/navidrome-data \
@@ -249,58 +249,57 @@ chmod +x scripts/podman-run.sh
   --env ND_SCANSCHEDULE=30m
 ```
 
-### Opções dos Scripts
+### Opcoes dos Scripts
 
-| Opção | Descrição | Padrão |
+| Opcao | Descricao | Padrao |
 |---|---|---|
-| `-m, --music CAMINHO` | Caminho para o diretório de música **(obrigatório)** | — |
+| `-m, --music CAMINHO` | Caminho para o diretorio de musica **(obrigatorio)** | — |
 | `-d, --data CAMINHO` | Caminho para os dados do Navidrome | `./navidrome-data` |
 | `-p, --port PORTA` | Porta do host para vincular | `4533` |
-| `-e, --env CHAVE=VALOR` | Variáveis de ambiente adicionais | — |
+| `-e, --env CHAVE=VALOR` | Variaveis de ambiente adicionais | — |
 | `-t, --tag TAG` | Tag da imagem do contêiner | `latest` |
 | `-h, --help` | Mostrar mensagem de ajuda | — |
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 navidrome/
-├── .editorconfig              # Configuração do editor
-├── .env.example               # Modelo de variáveis de ambiente
+├── .editorconfig              # Configuracao do editor
+├── .env.example               # Modelo de variaveis de ambiente
 ├── .gitignore                 # Regras do Git ignore
 ├── .github/
 │   └── workflows/
 │       └── ci.yml             # Workflow de CI (lint, secrets scan)
-├── CHANGELOG.md               # Histórico de versões
-├── LICENSE                    # Licença MIT
+├── CHANGELOG.md               # Historico de versoes
+├── LICENSE                    # Licenca MIT
 ├── README.md                  # Este arquivo
-├── docker-compose.yml         # Configuração do Docker Compose
-├── podman-compose.yml         # Configuração do Podman Compose
+├── docker-compose.yml         # Configuracao do Docker Compose
+├── podman-compose.yml         # Configuracao do Podman Compose
 └── scripts/
-    ├── docker-run.sh          # Script de implantação Docker
-    └── podman-run.sh          # Script de implantação Podman
+    ├── docker-run.sh          # Script de implantacao Docker
+    └── podman-run.sh          # Script de implantacao Podman
 ```
 
 ---
 
-## 🤝 Contribuindo
+## Contribuindo
 
-Contribuições são bem-vindas! Veja como você pode ajudar:
+Contribuicoes sao bem-vindas! Veja como voce pode ajudar:
 
-1. **Faça um Fork** do repositório
+1. **Faca um Fork** do repositorio
 2. **Crie** um branch de funcionalidade: `git checkout -b feature/minha-funcionalidade`
-3. **Commit** suas alterações: `git commit -am 'Adiciona minha funcionalidade'`
+3. **Commit** suas alteracoes: `git commit -am 'Adiciona minha funcionalidade'`
 4. **Push** para o branch: `git push origin feature/minha-funcionalidade`
 5. **Abra** um Pull Request
 
-Por favor, certifique-se de que seu código segue o estilo existente e inclui documentação apropriada.
+Por favor, certifique-se de que seu codigo segue o estilo existente e inclui documentacao apropriada.
 
 ---
 
-## 📄 Licença
+## Licenca
 
-Este projeto está licenciado sob a **Licença MIT** — veja o arquivo [LICENSE](LICENSE) para detalhes.
+Este projeto esta licenciado sob a **Licenca MIT** — veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ---
-
