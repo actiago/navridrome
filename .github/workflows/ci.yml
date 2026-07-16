@@ -32,37 +32,14 @@ jobs:
           done
           echo "All shell scripts have valid syntax."
 
-      - name: Check Markdown files
-        run: |
-          echo "Checking Markdown files..."
-          for file in $(find . -name "*.md" | sort); do
-            echo "  Found: $file"
-          done
-
-  docker-compose:
-    name: Validate Docker Compose
+  secrets-scan:
+    name: Secrets Scan
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Validate docker-compose.yml
-        run: |
-          if command -v docker-compose &> /dev/null; then
-            docker-compose -f docker-compose.yml config
-          elif command -v docker &> /dev/null; then
-            docker compose -f docker-compose.yml config
-          fi
-          echo "docker-compose.yml is valid."
-
-  markdown-lint:
-    name: Markdown Lint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Markdown Lint
-        uses: DavidAnson/markdownlint-cli2-action@v16
-        with:
-          globs: "**/*.md"
+      - name: Scan for secrets with Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

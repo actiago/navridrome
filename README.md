@@ -270,10 +270,8 @@ navidrome/
 ├── .env.example               # Modelo de variáveis de ambiente
 ├── .gitignore                 # Regras do Git ignore
 ├── .github/
-│   ├── dependabot.yml         # Configuração do Dependabot
 │   └── workflows/
-│       ├── ci.yml             # Workflow de CI (lint, validar)
-│       └── release.yml        # Workflow de release
+│       └── ci.yml             # Workflow de CI (lint, secrets scan)
 ├── CHANGELOG.md               # Histórico de versões
 ├── LICENSE                    # Licença MIT
 ├── README.md                  # Este arquivo
@@ -306,6 +304,3 @@ Este projeto está licenciado sob a **Licença MIT** — veja o arquivo [LICENSE
 
 ---
 
-<div align="center">
-  Feito com ❤️ para a comunidade Navidrome
-</div>

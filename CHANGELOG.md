@@ -7,14 +7,15 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.
 
 ## [Não lançado]
 
-### Adicionado
+### Removido
 
-- Configuração inicial do repositório
-- Suporte de implantação para Docker e Podman
-- Configurações do Docker Compose e Podman Compose
-- Scripts de implantação para Docker e Podman
-- Workflow de CI do GitHub Actions
-- Configuração do EditorConfig
-- Documentação abrangente
+- Workflow de release automatizado (`.github/workflows/release.yml`)
+- Configuração do Dependabot (`.github/dependabot.yml`)
+
+### Alterado
+
+- Workflow de CI simplificado: removidas validações de Docker Compose e Markdown lint
+- Adicionado scan de credenciais com Gitleaks ao workflow de CI
+- README atualizado para refletir a nova estrutura
 
 [Não lançado]: https://github.com/actiago/navridrome/compare/v0.0.0...HEAD
